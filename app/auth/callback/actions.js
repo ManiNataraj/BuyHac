@@ -52,7 +52,7 @@ export async function addProduct(formdata) {
             name: productData.productName,
             current_price: newPrice,
             currency: currency,
-            image_url: productData.productimageUrl,
+            image_url: productData.productImageUrl,
             updated_at: new Date().toISOString(),
          },{
             conflict: "user_id,url",
