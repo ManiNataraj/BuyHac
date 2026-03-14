@@ -133,7 +133,7 @@ export async function priceHistory(productId){
         return { error: "Unauthorized" };
     }
     try {
-        const { error } = await superbase.from("price_history").select("*").eq("product_id", productId).order("checked_at", {ascending: false});
+        const { data, error } = await superbase.from("price_history").select("*").eq("product_id", productId).order("checked_at", {ascending: false});
         if (error) {
             throw error;
         }

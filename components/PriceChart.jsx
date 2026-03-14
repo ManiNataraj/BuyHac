@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Loader2 } from "lucide-react";
-// import { getPriceHistory } from "@/app/actions";
+import { priceHistory } from "../app/auth/callback/actions";
 
 export default function PriceChart({ productId }) {
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ export default function PriceChart({ productId }) {
 
   useEffect(() => {
     async function fetchHistory() {
-      const history = await getPriceHistory(productId);
+      const history = await priceHistory(productId);
       
       // Transform Supabase data into Recharts format
       const formattedData = history.map((item) => ({
